@@ -1,0 +1,66 @@
+﻿@using WebApp.Models.Visit;
+
+<Toasts class="p-3" Messages="messages" AutoHide="true" Delay="4000" Placement="ToastsPlacement.BottomRight" />
+
+<Grid @ref="grid" TItem="VisitPartDetail" class="table table-hover table-bordered table-striped" DataProvider="VisitPartsDataProvider"
+      Responsive="true" AllowPaging="false">
+    <GridColumn TItem="VisitPartDetail" HeaderText="Name">
+        <ChildContent>
+            <InputText class="form-control" @bind-Value="@context.Name"></InputText>
+        </ChildContent>
+    </GridColumn>
+    <GridColumn TItem="VisitPartDetail" HeaderText="Quantity">
+        <InputNumber class="form-control" @bind-Value="@context.Quantity"></InputNumber>
+    </GridColumn>
+    <GridColumn TItem="VisitPartDetail" HeaderText="Price">
+        <CurrencyInput TValue="decimal" @bind-Value="@context.Price"></CurrencyInput>
+    </GridColumn>
+    <GridColumn TItem="VisitPartDetail" HeaderText="Delete">
+        <Icon Name="IconName.Trash3" Color="IconColor.Danger" onclick="@(async ()=>await DeleteVisitPart(context.Id))" />
+    </GridColumn>
+</Grid>
+
+<Button Class="btn btn-primary" onclick="@(()=>AddPartRow())">Add Visit Part Row</Button>
+
+
+
+@code {
+
+    Grid<VisitPartDetail> grid;
+
+    [Parameter]
+    public List<VisitPartDetail> VisitPartDetails { get; set; } = new List<VisitPartDetail>();
+
+    List<ToastMessage> messages = new List<ToastMessage>();
+
+
+    private async Task<GridDataProviderResult<VisitPartDetail>> VisitPartsDataProvider(GridDataProviderRequest<VisitPartDetail> request)
+    {
+        return await Task.FromResult(request.ApplyTo(VisitPartDetails));
+    }
+
+    protected async override Task OnParametersSetAsync()
+    {
+        if (grid != null)
+            await grid.RefreshDataAsync();
+    }
+
+    private async Task DeleteVisitPart(Guid? id)
+    {
+        var visitPart = VisitPartDetails.FirstOrDefault(v => v.Id == id);
+        VisitPartDetails.Remove(visitPart);
+        await grid.RefreshDataAsync();
+    }
+
+    private async Task AddPartRow()
+    {
+        if (VisitPartDetails.Count >= 5)
+        {
+            messages.Add(new ToastMessage(ToastType.Danger, "Maximum visit part count is 5"));
+            return;
+        }
+
+        VisitPartDetails.Add(new VisitPartDetail());
+        await grid.RefreshDataAsync();
+    }
+}

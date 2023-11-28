@@ -1,0 +1,59 @@
+﻿@page "/changeDataRandomly"
+
+<h3>Change Data Randomly</h3>
+
+
+<Button Class="btn btn-danger" onclick="@(()=>ChangeData())">Change datas randomly</Button>
+
+
+@if (ChangingDataInformation != null)
+{
+    <ul>
+        <li>
+            Deleted work orders:
+            <ul>
+                @foreach (var message in ChangingDataInformation.DeletedWorkOrdersMessages)
+                {
+                    <li>@message</li>
+                }
+            </ul>
+        </li>
+        <li>
+            Deleted visits:
+            <ul>
+                @foreach (var message in ChangingDataInformation.DeletedVisitsMessages)
+                {
+                    <li>@message</li>
+                }
+            </ul>
+        </li>
+        <li>
+            Deleted visit parts:
+            <ul>
+                @foreach (var message in ChangingDataInformation.DeletedPartsMessages)
+                {
+                    <li>@message</li>
+                }
+            </ul>
+        </li>
+        <li>
+            Changed parts quantity:
+            <ul>
+                @foreach (var message in ChangingDataInformation.ChangedQuantitiesMessages)
+                {
+                    <li>@message</li>
+                }
+            </ul>
+        </li>
+        <li>
+            Changed parts price:
+            <ul>
+                @foreach (var message in ChangingDataInformation.ChangedPricesMessages)
+                {
+                    <li>@message</li>
+                }
+            </ul>
+        </li>
+    </ul>
+}
+

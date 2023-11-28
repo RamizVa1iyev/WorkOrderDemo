@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7FEF5BFE-2D65-4C5A-BDB7-23DAE67EA01E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{144E0D9D-9A32-4956-9132-FAA9D37B5017}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{91B4D341-3463-4B3C-861D-F8CB8611F654}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorWeb", "BlazorWeb", "{621B266A-B985-4B0E-89B6-70F0D44C0E3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{573BF57F-AA16-4FE2-8962-92822B1C2758}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{E8466DBC-C91E-40C3-B812-DC4FB74E0A14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{15E90F32-F294-4D7A-BFEF-0619A1A5B005}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkOrderDemo.Api.Domain", "src\Api\Core\WorkOrderDemo.Api.Domain\WorkOrderDemo.Api.Domain.csproj", "{0A1A275E-277F-487C-A148-E5CAACF0E777}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkOrderDemo.Api.Application", "src\Api\Core\WorkOrderDemo.Api.Application\WorkOrderDemo.Api.Application.csproj", "{43F3276F-D5BB-4288-9F90-AE65F5957E63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkOrderDemo.Api.Infrastructure.Persistence", "src\Api\Infrastructure\WorkOrderDemo.Api.Infrastructure.Persistence\WorkOrderDemo.Api.Infrastructure.Persistence.csproj", "{5E101FD0-A3CE-4833-81F9-07CE2349E84C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkOrderDemo.WebApi", "src\Api\WebApi\WorkOrderDemo.WebApi\WorkOrderDemo.WebApi.csproj", "{3C7A32CF-FB01-43ED-9A51-609ABFD1956E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkOrderDemo.WebApp", "src\Clients\BlazorWeb\WorkOrderDemo.WebApp\WorkOrderDemo.WebApp.csproj", "{6FAE332E-EC4F-48AF-8950-3E711C79F934}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A1A275E-277F-487C-A148-E5CAACF0E777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A1A275E-277F-487C-A148-E5CAACF0E777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A1A275E-277F-487C-A148-E5CAACF0E777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A1A275E-277F-487C-A148-E5CAACF0E777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43F3276F-D5BB-4288-9F90-AE65F5957E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F3276F-D5BB-4288-9F90-AE65F5957E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F3276F-D5BB-4288-9F90-AE65F5957E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F3276F-D5BB-4288-9F90-AE65F5957E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E101FD0-A3CE-4833-81F9-07CE2349E84C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E101FD0-A3CE-4833-81F9-07CE2349E84C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E101FD0-A3CE-4833-81F9-07CE2349E84C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E101FD0-A3CE-4833-81F9-07CE2349E84C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C7A32CF-FB01-43ED-9A51-609ABFD1956E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C7A32CF-FB01-43ED-9A51-609ABFD1956E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C7A32CF-FB01-43ED-9A51-609ABFD1956E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C7A32CF-FB01-43ED-9A51-609ABFD1956E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FAE332E-EC4F-48AF-8950-3E711C79F934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FAE332E-EC4F-48AF-8950-3E711C79F934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FAE332E-EC4F-48AF-8950-3E711C79F934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FAE332E-EC4F-48AF-8950-3E711C79F934}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{144E0D9D-9A32-4956-9132-FAA9D37B5017} = {7FEF5BFE-2D65-4C5A-BDB7-23DAE67EA01E}
+		{91B4D341-3463-4B3C-861D-F8CB8611F654} = {7FEF5BFE-2D65-4C5A-BDB7-23DAE67EA01E}
+		{621B266A-B985-4B0E-89B6-70F0D44C0E3F} = {91B4D341-3463-4B3C-861D-F8CB8611F654}
+		{573BF57F-AA16-4FE2-8962-92822B1C2758} = {144E0D9D-9A32-4956-9132-FAA9D37B5017}
+		{E8466DBC-C91E-40C3-B812-DC4FB74E0A14} = {144E0D9D-9A32-4956-9132-FAA9D37B5017}
+		{15E90F32-F294-4D7A-BFEF-0619A1A5B005} = {144E0D9D-9A32-4956-9132-FAA9D37B5017}
+		{0A1A275E-277F-487C-A148-E5CAACF0E777} = {573BF57F-AA16-4FE2-8962-92822B1C2758}
+		{43F3276F-D5BB-4288-9F90-AE65F5957E63} = {573BF57F-AA16-4FE2-8962-92822B1C2758}
+		{5E101FD0-A3CE-4833-81F9-07CE2349E84C} = {E8466DBC-C91E-40C3-B812-DC4FB74E0A14}
+		{3C7A32CF-FB01-43ED-9A51-609ABFD1956E} = {15E90F32-F294-4D7A-BFEF-0619A1A5B005}
+		{6FAE332E-EC4F-48AF-8950-3E711C79F934} = {621B266A-B985-4B0E-89B6-70F0D44C0E3F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE1D1AA6-C827-446C-B0E0-8241EB8D1E32}
+	EndGlobalSection
+EndGlobal

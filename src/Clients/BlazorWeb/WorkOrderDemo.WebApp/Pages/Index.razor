@@ -1,0 +1,43 @@
+﻿@using WorkOrderDemo.WebApp.Models.WorkOrder;
+@page "/"
+
+<PageTitle>Work orders</PageTitle>
+
+<h3>Work orders</h3>
+
+<Grid @ref="grid" TItem="WorkOrderDetail" class="table table-hover table-bordered table-striped" DataProvider="WorkOrdersDataProvider"
+      AllowPaging="true" PageSize="5" Responsive="true" PageSizeSelectorVisible="true" PageSizeSelectorItems="@(new int[] { 5,10,20,50 })"
+      PaginationItemsTextFormat="{0} - {1} per {2} items" ItemsPerPageText="Items per page">
+    <GridColumn TItem="WorkOrderDetail" HeaderText="Importance">
+        @context.OrderImportance
+    </GridColumn>
+    <GridColumn TItem="WorkOrderDetail" HeaderText="Status">
+        @context.OrderStatus
+    </GridColumn>
+    <GridColumn TItem="WorkOrderDetail" HeaderText="Deadline">
+        @context.Deadline
+    </GridColumn>
+    <GridColumn TItem="WorkOrderDetail" HeaderText="CompanyName">
+        @context.OrderingCompanyName
+    </GridColumn>
+    <GridColumn TItem="WorkOrderDetail" HeaderText="Description">
+        @context.Description
+    </GridColumn>
+    <GridColumn TItem="WorkOrderDetail" HeaderText="Count of visits">
+        @context.CountOfVisits
+    </GridColumn>
+    <GridColumn TItem="WorkOrderDetail" HeaderText="Count of parts">
+        @context.CountOfParts
+    </GridColumn>
+    <GridColumn TItem="WorkOrderDetail" HeaderText="Visit">
+        <NavLink href=@($"visit/{context.Id}")> <Icon Name="IconName.PersonAdd" Color="IconColor.Success" /></NavLink>
+    </GridColumn>
+    <GridColumn TItem="WorkOrderDetail" HeaderText="Change">
+        <NavLink href=@($"saveWorkOrder/{context.Id}")> <Icon Name="IconName.PencilSquare" Color="IconColor.Primary" /></NavLink>
+    </GridColumn>
+    <GridColumn TItem="WorkOrderDetail" HeaderText="Delete">
+        <Icon Name="IconName.Trash3" Color="IconColor.Danger" onclick="@(async ()=>await DeleteWorkOrder(context.Id))" />
+    </GridColumn>
+</Grid>
+
+<NavLink Class="btn btn-success" href="saveWorkOrder">Add Work Order</NavLink>

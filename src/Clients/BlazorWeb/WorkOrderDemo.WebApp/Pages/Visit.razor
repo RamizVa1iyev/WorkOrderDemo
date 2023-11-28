@@ -1,0 +1,38 @@
+﻿@using WorkOrderDemo.WebApp.Components.Visit;
+@using WebApp.Models.Visit;
+
+@page "/visit/{id}"
+
+<Toasts class="p-3" Messages="messages" AutoHide="true" Delay="4000" Placement="ToastsPlacement.BottomRight" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Visits</h3>
+            <Grid @ref="grid" TItem="VisitDetail" class="table table-hover table-bordered table-striped" DataProvider="VisitsDataProvider"
+                  Responsive="true" AllowPaging="false" AllowSelection="true" SelectionMode="GridSelectionMode.Single" SelectedItemsChanged="OnSelectedItemsChanged">
+                <GridColumn TItem="VisitDetail" HeaderText="VisitorName">
+                    <ChildContent>
+                        <InputText class="form-control" @bind-Value="@context.VisitorName"></InputText>
+                    </ChildContent>
+                </GridColumn>
+                <GridColumn TItem="VisitDetail" HeaderText="VisitDate">
+                    <DateInput @bind-Value="@context.VisitDate"></DateInput>
+                </GridColumn>
+                <GridColumn TItem="VisitDetail" HeaderText="TotalPrice">
+                    @context.TotalPrice
+                </GridColumn>
+                <GridColumn TItem="VisitDetail" HeaderText="Delete">
+                    <Icon Name="IconName.Trash3" Color="IconColor.Danger" onclick="@(async ()=>await DeleteVisit(context.Id))" />
+                </GridColumn>
+            </Grid>
+            <Button Class="btn btn-primary" onclick="@(()=>AddVisitRow())">Add Visit Row</Button>
+            <Button Class="btn btn-success" onclick="@(async ()=>await Save())">Save Selected Visits with Parts</Button>
+        </div>
+        <div class="col-md-6">
+            <h3>Visit parts</h3>
+            <VisitPart VisitPartDetails="SelectedVisitParts"></VisitPart>
+        </div>
+    </div>
+
+</div>

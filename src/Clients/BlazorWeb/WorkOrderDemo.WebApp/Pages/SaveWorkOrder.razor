@@ -1,0 +1,51 @@
+﻿@page "/saveWorkOrder/{id?}";
+
+<h3>Detail</h3>
+
+<Toasts class="p-3" Messages="messages" AutoHide="true" Delay="4000" Placement="ToastsPlacement.BottomRight" />
+
+<EditForm Model=@WorkOrderDetail OnValidSubmit="Save">
+    <DataAnnotationsValidator />
+    <div class="container">
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label class="form-label">Importance</label>
+                <InputSelect class="form-select" @bind-Value=WorkOrderDetail.OrderImportanceId>
+                    @foreach (var importance in WorkOrderImportances)
+                    {
+                        <option value="@importance.Id">@importance.Name</option>
+                    }
+                </InputSelect>
+            </div>
+            <div class="col-6 mb-3">
+                <label class="form-label">Status</label>
+                <InputSelect disabled="true"  class="form-select" @bind-Value=WorkOrderDetail.OrderStatusId>
+                    @foreach (var status in WorkOrderStatuses)
+                    {
+                        <option value="@status.Id">@status.Name</option>
+                    }
+                </InputSelect>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label class="form-label">Deadline</label>
+                <DateInput Placeholder="Deadline" TValue="DateTime" @bind-Value="WorkOrderDetail.Deadline" />
+            </div>
+            <div class="col-6 mb-3">
+                <label class="form-label">Ordering Company Name</label>
+                <InputText class="form-control" DisplayName="Ordering Company Name" @bind-Value="WorkOrderDetail.OrderingCompanyName" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 mb-3">
+                <label class="form-label">Description</label>
+                <InputTextArea class="form-control" Placeholder="Description" @bind-Value="WorkOrderDetail.Description"></InputTextArea>
+            </div>
+        </div>
+
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</EditForm>
