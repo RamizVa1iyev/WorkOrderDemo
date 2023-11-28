@@ -1,11 +1,11 @@
-#WorkOrderDemo
+# Work Order Demo
 This project follows a Domain-Driven Design (DDD) approach and adheres to clean code patterns. It leverages Aggregate Roots, Unit of Work, CQRS, and Mediator on the backend, while the frontend is developed using Blazor Web Assembly.
 
-##Description
+## Description
 
 This repository contains the source code for WorkOrderDemo. The application is built using .Net7, EntityFramework Core, MediatR, AutoMapper, Polly and organized following DDD principles and clean code patterns.
 
-##GettingStarted
+## GettingStarted
 Prerequisites
 .Net 7 runtime
 Installation
@@ -17,7 +17,7 @@ Update the connectionString to correspond with your database configuration in th
 Save the changes.
 Running the Application
 
-##Backend
+## Backend
 The backend of this application is built on:
 
 Framework: .Net 7 class library and web api
@@ -25,7 +25,7 @@ Architecture: Domain-Driven Design (DDD)
 Patterns: Aggregate Roots, Unit of Work, CQRS, Mediator
 Technologies: MediatR, EntityFramework Code, Polly, OpenApi, AutoMapper
 
-##Frontend
+## Frontend
 The frontend of this application is developed using:
 
 Framework: Blazor Web Assembly
