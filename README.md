@@ -15,7 +15,7 @@ Modify the connectionString in the appsettings.json file to match your database 
 Proceed to the WorkOrderDbContextDesignFactory file located in Infrastructure => Persistence => Context.
 Update the connectionString to correspond with your database configuration in the WorkOrderDbContextDesignFactory file.
 Save the changes.
-Select WebApp and WebApi as multiple startup projects
+Select WebApp and WebApi as multiple startup projects.
 Running the Application
 
 ## Backend
